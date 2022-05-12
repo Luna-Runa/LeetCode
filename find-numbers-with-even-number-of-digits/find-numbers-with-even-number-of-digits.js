@@ -9,18 +9,13 @@ var findNumbers = function(nums) {
     nums.forEach((e) => {
         while(e / 10 >= 1) {
             temp++;
-            e = e / 10
+            e = e / 10;
         }
         
-        
-        
-        if (temp != 0 && temp % 2 === 1)
-            answer++
-        
-         console.log(e, temp, answer)
-        
-        temp = 0;
+        if (temp !== 0 && temp % 2 === 1)
+            answer++;
     
+        temp = 0;
     })
     
     return answer;
