@@ -14,13 +14,13 @@ var validMountainArray = function(arr) {
         if(arr[0] > arr[1]) return false;
         
         //req up but down
-        if(ud === 1 && prev > arr[i]) ud = -1;
+        else if(ud === 1 && prev > arr[i]) ud = -1;
         
         //req down but up
-        if(ud === -1 && prev < arr[i]) return false;
+        else if(ud === -1 && prev < arr[i]) return false;
         
         //straight
-        if(prev === arr[i]) return false;
+        else if(prev === arr[i]) return false;
     
         //req up arr up && req down arr down && not straight
         prev = arr[i];
