@@ -11,22 +11,13 @@ var validMountainArray = function(arr) {
     
     for(let i = 0; i < arr.length; i++) {
         //start but down
-        if(arr[0] > arr[1]) {
-            console.log(`${prev}, ${arr[i]}, ${ud}, start but down`)
-            return false;
-        }
+        if(arr[0] > arr[1]) return false;
         
         //req up but down
-        if(ud === 1 && prev > arr[i]) {
-            console.log(`${prev}, ${arr[i]}, ${ud}, req up but down. change ud`)
-            ud = -1;
-        }
+        if(ud === 1 && prev > arr[i]) ud = -1;
         
         //req down but up
-        if(ud === -1 && prev < arr[i]) { 
-            console.log(`${prev}, ${arr[i]}, ${ud}, req down but up`)
-            return false;
-        }
+        if(ud === -1 && prev < arr[i]) return false;
         
         //straight
         if(prev === arr[i]) return false;
