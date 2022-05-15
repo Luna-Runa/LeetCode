@@ -4,18 +4,19 @@
  */
 var removeDuplicates = function(nums) {
     let k = nums.length;
+    let prev = -101;
     
     for(let i = 0; i < nums.length; i++) {
-        for(let j = i + 1; j < nums.length; j++) {
-            if (nums[i] === nums[j] && nums[j] != '_') {
-                nums[j] = '_';
-                k--;
-            }
+        if (nums[i] === prev) {
+            nums[i] = '_';
+            k--;
         }
+        else prev = nums[i];
     }
-    nums.sort()
+    
+    nums.sort();
     nums.length = k;
-    nums.sort((a, b) => a - b)
+    nums.sort((a, b) => a - b);
     
     return k
 };
