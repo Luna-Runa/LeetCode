@@ -3,16 +3,17 @@
  * @return {number[]}
  */
 var replaceElements = function(arr) {
-    let max
-    for(let i = 0; i < arr.length; i++) {
-        max = 0;
+    let max = 0;
+    let temp = []
     
-        for(let j = i + 1; j < arr.length; j++) 
-            if(max < arr[j]) max = arr[j]
-        
-        arr[i] = max;
+    for(let i = arr.length - 1; i > 0; i--) {
+        if(max < arr[i]) max = arr[i];
+    
+        temp[i] = max;
     }
-    arr[arr.length-1] = -1;
     
-    return arr;
+    temp.shift();
+    temp[arr.length-1] = -1
+    
+    return temp;
 };
