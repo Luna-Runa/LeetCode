@@ -6,12 +6,10 @@ var moveZeroes = function(nums) {
     let count = 0;
     let temp;
     
-    while(true) {
-        temp = nums.findIndex(e => e === 0);
-        if (temp === -1) break;
-        else {
+    for(let i = 0; i < nums.length; i++) {
+        if (nums[i] === 0) {
             count++;
-            nums.splice(temp, 1)
+            nums.splice(i--, 1)
         }
     }
     
