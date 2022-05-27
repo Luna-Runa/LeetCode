@@ -13,22 +13,20 @@ var oddEvenList = function(head) {
     
     root = head;
     
-    if(head === null) return head
-    even = head.next;
+    if (!head) return head;
+
+    evenRoot = head.next;
+    even = evenRoot
     
-    while(head.next !== null && even.next !== null) {
+    while(head.next && even.next) {
+        head.next = head.next.next;
+        even.next = even.next.next;
         
-        let temp = head.next;
-        
-        head.next = head.next.next
-        
-        if (head.next !== null) {
-            head = head.next;
-            temp.next = head.next;
-        }
+        head = head.next;
+        even = even.next;
     }
     
-    head.next = even;
+    head.next = evenRoot;
     
     return root;
 };
