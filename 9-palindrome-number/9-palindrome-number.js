@@ -3,13 +3,12 @@
  * @return {boolean}
  */
 var isPalindrome = function(x) {
-    x = String(x)
-    let l = x.length - 1;
-    console.log(l)
+    let reverse = "";
+    x = x.toString();
     
-    for(let i = 0; i < Math.round(l/2); i++) {
-        if(x[i] !== x[l - i]) return false;
-    }
+    for(e of x) 
+        reverse = e + reverse;
     
-    return true;
+    
+    return reverse === x? true: false;
 };
