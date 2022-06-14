@@ -11,9 +11,9 @@ var generateParenthesis = function(n) {
             return;
         }
         
-        if(l < n) dfs(text+"(", l+1, r)
+        if(l < n) dfs(`${text}(`, l+1, r)
         
-        if(r < l) dfs(text+")", l, r+1)
+        if(r < l) dfs(`${text})`, l, r+1)
     }
     
     dfs("", 0, 0)
