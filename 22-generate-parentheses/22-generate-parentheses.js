@@ -5,6 +5,8 @@
 var generateParenthesis = function(n) {
     const answer = [];
     
+    if(n === 1) return ["()"]
+    
     function dfs(text, l, r) {
         if(text.length === 2 * n) {
             answer.push(text);
